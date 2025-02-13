@@ -30,8 +30,7 @@ export class FormComponent {
     }
     this.hiddenStatus = !this.hiddenStatus;
   }
-  addNew(): void {
-    // Comprobamos si existe alguna propiedad vacia. En caso contrario, 
+  addNew(): void { 
     const isThereAnyEmptyProperty: boolean = Object.values(this.new).some(value => value === "");
     if (isThereAnyEmptyProperty) {
       alert("Por favor, complete los campos vacíos.");
