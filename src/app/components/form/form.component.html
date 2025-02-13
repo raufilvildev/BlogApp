@@ -13,6 +13,6 @@
         </div>
     </div>
     <input type="date" class="form__input input--date" [(ngModel)]="new.date" name="date">
-    <textarea placeholder="Añade el contenido de la noticia..." class="form__textarea textarea--new" [(ngModel)]="new.contentNew" name="content-new"></textarea>
-    <button type="button" (click)="addNew()" class="form__button button">Añadir noticia</button>
+    <textarea rows="1" placeholder="Añade el contenido de la noticia..." class="form__textarea textarea--new" [(ngModel)]="new.contentNew" name="content-new"></textarea>
+    <button type="submit" (click)="addNew()" class="form__button button">Añadir noticia</button>
 </form>

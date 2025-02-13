@@ -1,4 +1,11 @@
-.header {
+.article {
+    display: flex;
+    flex-direction:column;
+    padding: 50px;
+    gap: 20px;
+}
+
+.article__header {
     display: flex;
     flex-direction: column;
     gap: 10px;

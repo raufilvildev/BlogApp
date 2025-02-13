@@ -15,10 +15,6 @@ app-form {
 
 app-new {
     width: 100%;
-    display: flex;
-    flex-direction:column;
-    padding: 50px;
-    gap: 20px;
 }
 
 app-news-list {

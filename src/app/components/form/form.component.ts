@@ -1,4 +1,4 @@
-import { Component, WritableSignal, EventEmitter, signal, Output } from '@angular/core';
+import { Component, WritableSignal, EventEmitter, signal, Output, ViewChild,ElementRef } from '@angular/core';
 import { INew } from '../../interfaces/inew.interface';
 import { FormsModule } from '@angular/forms';
 
@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class FormComponent {
   @Output() newEmitted = new EventEmitter<INew>();
+  @ViewChild("textarea") textarea!: ElementRef;
   new: INew = {
     title:      "",
     subtitle:   "",
@@ -30,15 +31,21 @@ export class FormComponent {
     this.hiddenStatus = !this.hiddenStatus;
   }
   addNew(): void {
-    this.newEmitted.emit(this.new);
-    this.new = {
-      title:      "",
-      subtitle:   "",
-      imgUrl:     "",
-      imgCaption: "",
-      author:     "",
-      date:       "",
-      contentNew: ""
+    // Comprobamos si existe alguna propiedad vacia. En caso contrario, 
+    const isThereAnyEmptyProperty: boolean = Object.values(this.new).some(value => value === "");
+    if (isThereAnyEmptyProperty) {
+      alert("Por favor, complete los campos vacíos.");
+    } else {
+      this.newEmitted.emit(this.new);
+      this.new = {
+        title:      "",
+        subtitle:   "",
+        imgUrl:     "",
+        imgCaption: "",
+        author:     "",
+        date:       "",
+        contentNew: ""
+      }
     }
   }
 }
