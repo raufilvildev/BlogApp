@@ -13,6 +13,6 @@
         </div>
     </div>
     <input type="date" class="form__input input--date" [(ngModel)]="new.date" name="date">
-    <div #textarea contenteditable (input)="updateContent($event)" class="form__textarea textarea--new"></div>
+    <div #textarea contenteditable (input)="updateContent($event)" class="form__textarea textarea--new" placeholder="Inserte aquí el contenido de la noticia..."></div>
     <button type="submit" (click)="addNew()" class="form__button button">Añadir noticia</button>
 </form>

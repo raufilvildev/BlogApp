@@ -25,7 +25,11 @@ export class FormComponent {
     this.isHidden.set(!this.isHidden);
   }
   updateContent(event: any): void {
-    this.new.contentNew = event.target.textContent;
+    const textarea: any = event.target;
+    this.new.contentNew = textarea.textContent;
+    if (textarea.textContent?.trim() === "") {
+      textarea.innerHTML = "";
+    }
   }
   addNew(): void {
     const isThereAnyEmptyProperty: boolean = Object.values(this.new).some(value => value === "");
