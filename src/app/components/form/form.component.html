@@ -1,7 +1,7 @@
 <div class="createNewSection">
     <button (click)="occultOrShowCreateNew()" class="createNewSection__button button">Crear noticia</button>
 </div>
-<form action="" class="form {{ hidden() }}">
+<form action="" class="form" [class.hidden]="isHidden()">
     <input type="text" class="form__input input--title" placeholder="Inserte aquí el título de la noticia..." [(ngModel)]="new.title" name="title">
     <input type="text" class="form__input input--subtitle" placeholder="Inserte aquí el subtítulo de la noticia..." [(ngModel)]="new.subtitle" name="subtitle">
     <div class="form__image_section">
@@ -13,6 +13,6 @@
         </div>
     </div>
     <input type="date" class="form__input input--date" [(ngModel)]="new.date" name="date">
-    <textarea rows="1" placeholder="Añade el contenido de la noticia..." class="form__textarea textarea--new" [(ngModel)]="new.contentNew" name="content-new"></textarea>
+    <div #textarea contenteditable (input)="updateContent($event)" class="form__textarea textarea--new"></div>
     <button type="submit" (click)="addNew()" class="form__button button">Añadir noticia</button>
 </form>

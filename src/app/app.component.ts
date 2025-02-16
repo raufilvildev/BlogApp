@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { FormComponent } from './components/form/form.component';
 import { NewsListComponent } from './components/news-list/news-list.component';
 import { NewComponent } from './components/new/new.component';
@@ -7,7 +6,7 @@ import { INew } from './interfaces/inew.interface';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FormComponent, NewsListComponent, NewComponent],
+  imports: [FormComponent, NewsListComponent, NewComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

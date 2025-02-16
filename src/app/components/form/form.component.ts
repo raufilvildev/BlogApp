@@ -1,4 +1,4 @@
-import { Component, WritableSignal, EventEmitter, signal, Output } from '@angular/core';
+import { Component, WritableSignal, EventEmitter, signal, Output, ViewChild, ElementRef } from '@angular/core';
 import { INew } from '../../interfaces/inew.interface';
 import { FormsModule } from '@angular/forms';
 
@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class FormComponent {
   @Output() newEmitted = new EventEmitter<INew>();
+  @ViewChild("textarea") textarea!: ElementRef;
   new: INew = {
     title:      "",
     subtitle:   "",
@@ -19,17 +20,14 @@ export class FormComponent {
     date:       "",
     contentNew: ""
   }
-  hiddenStatus: boolean = true;
-  hidden: WritableSignal<string> = signal("hidden");
+  isHidden: WritableSignal<boolean> = signal(true);
   occultOrShowCreateNew(): void {
-    if (this.hiddenStatus) {
-      this.hidden.set("")
-    } else {
-      this.hidden.set("hidden");
-    }
-    this.hiddenStatus = !this.hiddenStatus;
+    this.isHidden.set(!this.isHidden);
   }
-  addNew(): void { 
+  updateContent(event: any): void {
+    this.new.contentNew = event.target.textContent;
+  }
+  addNew(): void {
     const isThereAnyEmptyProperty: boolean = Object.values(this.new).some(value => value === "");
     if (isThereAnyEmptyProperty) {
       alert("Por favor, complete los campos vacíos.");
@@ -44,6 +42,7 @@ export class FormComponent {
         date:       "",
         contentNew: ""
       }
+      this.textarea.nativeElement.textContent = "";
     }
   }
 }

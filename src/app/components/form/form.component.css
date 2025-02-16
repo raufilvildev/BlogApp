@@ -68,10 +68,13 @@
     border:0;
     outline:0;
     border-bottom:1.5px solid lightgray;
-    overflow-y:scroll;
-    box-sizing:content-box;
+    overflow-y:auto;
 }
 
 .form__textarea:focus {
     border-bottom:1.5px solid rgb(0, 165, 255);
+}
+
+.empty {
+    background-color: rgba(255, 255, 224, 0.761);
 }

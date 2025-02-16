@@ -1,5 +1,3 @@
+<app-form (newEmitted)="addNew($event)"></app-form>
+<app-new [new]="new"></app-new>
 <app-news-list [arrNews]="arrNews" (newEmitted)="showNew($event)"></app-news-list>
-<div class="new-section">
-  <app-form (newEmitted)="addNew($event)"></app-form>
-  <app-new [new]="new"></app-new>
-</div>
