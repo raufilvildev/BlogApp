@@ -52,6 +52,6 @@ app-root {
 
 @media (width >= 700px) {
     app-root {
-        padding: 50px;
+        padding: 75px;
     }
 }
