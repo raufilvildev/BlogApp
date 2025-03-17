@@ -1,0 +1,18 @@
+<div class="createNewSection">
+    <button (click)="occultOrShowCreateNew()" class="createNewSection__button button">Crear noticia</button>
+</div>
+<form action="" class="form" [class.hidden]="isHidden()">
+    <input type="text" class="form__input input--title" placeholder="Inserte aquí el título de la noticia..." [(ngModel)]="new.title" name="title">
+    <input type="text" class="form__input input--subtitle" placeholder="Inserte aquí el subtítulo de la noticia..." [(ngModel)]="new.subtitle" name="subtitle">
+    <div class="form__image_section">
+        <img [src]="new.imgUrl" class="form__new_image">
+        <div class="form__image_information">
+            <input type="text" class="form__input input--image_url" placeholder="Inserte la url de la imagen..." [(ngModel)]="new.imgUrl" name="img-url">
+            <input type="text" class="form__input input--figcaption" placeholder="Inserte la leyenda..." [(ngModel)]="new.imgCaption" name="fig-caption">
+            <input type="text" class="form__input input--author" placeholder="Inserte aquí el nombre del autor..." [(ngModel)]="new.author" name="author">
+        </div>
+    </div>
+    <input type="date" class="form__input input--date" [(ngModel)]="new.date" name="date">
+    <div #textarea contenteditable (input)="updateContent($event)" class="form__textarea textarea--new" placeholder="Inserte aquí el contenido de la noticia..."></div>
+    <button type="submit" (click)="addNew()" class="form__button button">Añadir noticia</button>
+</form>

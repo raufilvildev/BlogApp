@@ -1,0 +1,57 @@
+* {
+    min-width: 0;
+    font: inherit;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+img, video, svg {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+body {
+    margin: 0;
+    min-height: 100dvh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+    margin: 0;
+}
+
+p {
+    text-wrap: pretty;
+    margin: 0;
+}
+
+ul {
+    margin:0;
+    padding: 0;
+}
+
+figure {
+    margin: 0;
+}
+
+/* You can add global styles to this file, and also import other style files */
+app-root {
+    display:flex;
+    width: 100%;
+    min-height:100vh;
+    padding: 15px;
+    flex-direction:column;
+    justify-content: space-between;
+    gap:20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+@media (width >= 700px) {
+    app-root {
+        padding: 75px;
+    }
+}

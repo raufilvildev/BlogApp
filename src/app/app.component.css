@@ -1,0 +1,15 @@
+app-form {
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+app-new {
+    width: 100%;
+}
+
+app-news-list {
+    width: 100%;
+}
+

@@ -1,0 +1,17 @@
+<article class="article">
+    <header class="article__header">
+        <h2 class="header__title">{{ new.title }}</h2>
+        <h3 class="header__subtitle"> {{ new.subtitle }}</h3>
+        <figure class="header__figure">
+            <img [src]="new.imgUrl" [alt]="new.imgCaption" class="figure__img">
+            <figcaption class="figure__caption">{{ new.imgCaption }}</figcaption>
+        </figure>
+        <div class="header__newAuthorAndDate">
+            <p class="header__author">{{ new.author }}</p>
+            <p class="header__date">{{ formatDate(new.date) }}</p>
+        </div>
+    </header>
+    <main class="article__main">
+        <p class="header__new_content" [innerHTML]="new.contentNew"></p>
+    </main>
+</article>

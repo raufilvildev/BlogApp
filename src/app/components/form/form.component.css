@@ -1,0 +1,81 @@
+.form {
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.hidden {
+    display:none;
+}
+
+.form__input[type="text"] {
+    width:100%;
+    padding:5px;
+    border:0;
+    border-bottom:1.5px solid lightgray;
+    outline:0;
+}
+
+.form__input[type="text"]:focus {
+    border-bottom:1.5px solid rgb(0, 165, 255);
+}
+
+.form__image_information {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+}
+
+.input--figcaption, .input--author {
+    width:100%;
+    text-align:right;
+}
+
+.form__new_image {
+    width:100%;
+    max-height:500px;
+    text-align:center;
+    object-fit:contain;
+    object-position:center;
+}
+
+.input--date {
+    width:fit-content;
+    align-self:end;
+    padding:5px;
+}
+
+.createNewSection {
+    text-align:center;
+}
+
+.button {
+    padding:10px;
+    border:0;
+    background-color:cornflowerblue;
+    color:white;
+}
+
+.button:hover {
+    background-color:rgb(0, 135, 225)
+}
+
+.form__textarea {
+    width:100%;
+    padding:5px;
+    resize:none;
+    border:0;
+    outline:0;
+    border-bottom:1.5px solid lightgray;
+    overflow-y:auto;
+}
+
+.form__textarea:focus {
+    border-bottom:1.5px solid rgb(0, 165, 255);
+}
+
+.form__textarea:empty::before {
+    content: attr(placeholder);
+    color: gray;
+}

@@ -1,0 +1,14 @@
+<aside class="new_list__aside">
+    <h2 class="news_list__title">Otras noticias de interés</h2>
+    <ul class="new_list">
+        @for (new of arrNews; track new.title) {
+        <li class="new_list__item" (click)="showNew(new)">
+            <img [src]="new.imgUrl" alt="new.imgCaption" class="new_list__img">
+            <div class="new_list__text">
+                <h2 class="new_list__title">{{ new.title }}</h2>
+                <p class="new_list__content" [innerHTML]="new.contentNew"></p>
+            </div>
+        </li>
+        }
+    </ul>
+</aside>
